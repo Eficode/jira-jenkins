@@ -29,9 +29,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   jiravm.vm.network "forwarded_port", guest: 8005, host: 8005
   jiravm.vm.network "forwarded_port", guest: 8080, host: 8081
   $script = <<SCRIPT
-  wget -quiet https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.1.8-jira-7.1.8-x64.bin
+  wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.1.8-jira-7.1.8-x64.bin
   chmod +x atlassian-jira-software-7.1.8-jira-7.1.8-x64.bin
-  wget -quiet https://raw.githubusercontent.com/wizzor/jira-jenkins/master/response.varfile
+  wget -q https://raw.githubusercontent.com/wizzor/jira-jenkins/master/response.varfile
   sudo ./atlassian-jira-software-7.1.8-jira-7.1.8-x64.bin -q -varfile response.varfile
 SCRIPT
 
